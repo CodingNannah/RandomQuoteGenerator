@@ -40,6 +40,17 @@ const usedIndexes = new Set()
 const quoteElement = document.getElementById("quote")
 
 function generateQuote() {
-    // quoteElement.innerHTML = "Hello, World!"
+    if (usedIndexes.size >= quotes.length) {
+        usedIndexes.clear()
+    }
+    
+    while (true) {
+        const randomIndex = Math.floor(Math.random() * quotes.length)
 
+        if (usedIndexes.has(randomIndex)) continue
+
+        const quote = quotes[randomIndex]
+        quoteElement.innerHTML = quote;
+        usedIndexes.add(randomIndex)
+        break
 }
