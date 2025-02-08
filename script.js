@@ -53,4 +53,6 @@ function generateQuote() {
         quoteElement.innerHTML = quote;
         usedIndexes.add(randomIndex)
         break
+    }
+
 }
